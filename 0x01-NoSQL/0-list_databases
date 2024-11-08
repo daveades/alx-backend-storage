@@ -1,5 +1,12 @@
-// A MongoDB command file to list all
-db.adminCommand('listDatabases').databases.forEach(function(database) {
+// A MongoDB command file to list all databases.
+// It uses the adminCommand which return an object that contains am array of databases
+// We then loop through it and print them using mongoDB's print() function
+
+var databases = db.adminCommand('listDatabases').databases;
+
+for (var i = 0; i < databases.length; i++) {
+    var database = databases[i];
+    var sizeGB = (database.sizeOnDisk / (1024 * 1024 * 1024)).toFixed(3);
     print(database.name);
-});
+}
 
