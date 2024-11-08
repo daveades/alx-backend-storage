@@ -1,5 +1,5 @@
 // A MongoDB command file to list all
 db.adminCommand('listDatabases').databases.forEach(function(database) {
-    print(database.name + "\t" + (database.sizeOnDisk / (1024 * 1024 * 1024)).toFixed(3) + " GB");
+    print(database.name);
 });
 
