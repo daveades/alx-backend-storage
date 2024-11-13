@@ -1,3 +1,2 @@
 // Script that displays the number of documents in a collection `school`
-const count = db.school.countDocuments();
-print(count);
+const count = db.school.find().count();
