@@ -5,7 +5,7 @@ Module that contains function to
 insert a new doc in a mongo collection
 """
 
-def insert_School(mongo_collection, **kwargs):
+def insert_school(mongo_collection, **kwargs):
 	"""
 	Function to insert a new document
 	in a collection based on **kwargs
