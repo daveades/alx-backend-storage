@@ -1,4 +1,2 @@
-db.adminCommand('listDatabases').databases.forEach(function(database) {
-		 print(database.name + "\t" + (database.sizeOnDisk / (1024 * 1024 * 1024)).toFixed(3) + " GB")
-});
-
+// Script to list all databases in a mongoDB server
+show dbs
