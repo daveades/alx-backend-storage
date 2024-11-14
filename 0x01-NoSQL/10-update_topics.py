@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Task 10"""
 
-def update_topics(mongo_collcetion, name, topics):
+def update_topics(mongo_collection, name, topics):
 	"""
 	Update topics of documents in a collection based on name
 	"""
