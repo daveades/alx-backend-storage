@@ -1,0 +1,2 @@
+// Delete douments that match certain parameter in a collection
+db.school.deleteMany({name: "Holberton school"});
