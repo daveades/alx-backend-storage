@@ -3,30 +3,28 @@
 Advanced task 1
 """
 
+
 def top_students(mongo_collection):
-    """
-    Returns all students sorted by average score.
+	"""
+	Returns all students sorted by average scores
+	"""
 
-    :param mongo_collection: The pymongo collection object
-    :return: List of students with averageScore included
-    """
-    pipeline = [
-        {
-            "$project": {
-                "name": 1,
-                "averageScore": {
-                    "$avg": "$scores"
-                }
-            }
-        },
-        {
-            "$sort": {
-                "averageScore": -1
-            }
-        }
-    ]
+	pipeline = [
+		{
+			'$project': {
+				'_id': 1,
+				'name': 1,
+				'averageScore': {
+					'$avg': '$topics.score',
+				},
+				'topics': 1,
+			},
+		},
+		{
+			'$sort': {'averageScore': -1},
+		},
+	]
 
-    result = list(mongo_collection.aggregate(pipeline))
+	result = list(mongo_collection.aggregate(pipeline))
 
-    return result
-
+	return result
