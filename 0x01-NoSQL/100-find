@@ -1,0 +1,11 @@
+// Advanced Task 1
+
+db.school.find(
+	{
+		name: {$regex: /^Holberton/}
+	}
+)
+		
+		
+
+
